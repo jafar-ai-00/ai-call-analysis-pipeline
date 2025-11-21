@@ -1,0 +1,201 @@
+{
+  "metadata": {
+    "call_id": "conversation_1580134208",
+    "client_id": "client_123",
+    "audio_file": "recordings/conversation.wav",
+    "call_start_time": null,
+    "call_end_time": null,
+    "duration_seconds": null,
+    "agent_name": null,
+    "customer_phone": null,
+    "extra_metadata": {
+      "size_bytes": 12348094,
+      "modified_time": 1580134208.0,
+      "created_at": "2025-11-21T21:44:29.887920"
+    }
+  },
+  "transcript": "Does it get easier? No. Yes. It gets easier. Oh, yeah? Look at you. Thanks. The more you know who you are and what you want, the less you let things upset you. Yeah. I just don't know what I'm supposed to be, you know? I tried being a writer, but I hate what I write. And I tried taking pictures, but they're so mediocre, you know? Every girl goes through a photography phase, you know? Like horses, you know? Take dumb pictures of your feet. You'll figure that out. I'm not worried about you.",
+  "sentiment": {
+    "overall": "neutral",
+    "score": 0.0,
+    "emotion_tags": [
+      "confusion",
+      "introspection",
+      "reassurance"
+    ],
+    "sentiment_timeline": [
+      {
+        "segment_label": "intro",
+        "start_second": null,
+        "end_second": null,
+        "sentiment": "neutral",
+        "notes": "Initial question about life getting easier."
+      },
+      {
+        "segment_label": "reflection",
+        "start_second": null,
+        "end_second": null,
+        "sentiment": "neutral",
+        "notes": "Discussion about self-awareness and personal growth."
+      },
+      {
+        "segment_label": "self-doubt",
+        "start_second": null,
+        "end_second": null,
+        "sentiment": "negative",
+        "notes": "Expression of uncertainty about personal identity and career."
+      },
+      {
+        "segment_label": "encouragement",
+        "start_second": null,
+        "end_second": null,
+        "sentiment": "positive",
+        "notes": "Reassurance and encouragement about figuring things out."
+      }
+    ],
+    "notes": "The call reflects a journey from questioning and self-doubt to reassurance and encouragement. The customer expresses confusion about their identity and career but receives positive reinforcement."
+  },
+  "intent_and_topics": {
+    "primary_intent": null,
+    "secondary_intents": [],
+    "topics": [],
+    "key_phrases": [
+      "Does it get easier?",
+      "The more you know who you are",
+      "I just don't know what I'm supposed to be",
+      "I tried being a writer",
+      "I tried taking pictures",
+      "Every girl goes through a photography phase"
+    ],
+    "intent_confidence": null,
+    "notes": "The conversation is more philosophical and introspective rather than a typical customer support call. There is no clear intent related to customer service."
+  },
+  "call_quality": {
+    "overall_quality_score": 65,
+    "scores": {
+      "greeting": 70,
+      "listening_and_empathy": 75,
+      "clarity_of_explanations": 60,
+      "professionalism": 65,
+      "script_adherence": null
+    },
+    "strengths": [
+      "The agent demonstrated good listening skills by acknowledging the customer's feelings.",
+      "The agent provided reassurance and encouragement to the customer."
+    ],
+    "improvements": [
+      "The agent should work on providing clearer explanations to the customer's concerns.",
+      "The agent could improve by adhering more closely to the script to ensure all necessary information is covered."
+    ],
+    "notes": "The agent was empathetic and supportive, but could improve in providing clearer guidance and following the script more closely."
+  },
+  "compliance_and_risk": {
+    "required_phrases_present": [],
+    "missing_required_phrases": [],
+    "forbidden_phrases_detected": [],
+    "pii_detected": [],
+    "risk_level": "low",
+    "notes": "The call transcript does not contain any required or forbidden phrases, and no PII was detected. Therefore, the risk level is assessed as low."
+  },
+  "outcome_and_followup": {
+    "resolution_status": "unresolved",
+    "final_outcome": "no_clear_outcome",
+    "followup_actions": [],
+    "escalation_required": false,
+    "escalation_reason": null,
+    "notes": "The call did not address any specific customer issue or request. No clear outcome or next steps were identified."
+  },
+  "custom_metrics": null,
+  "raw_llm_outputs": {
+    "sentiment": {
+      "overall": "neutral",
+      "score": 0.0,
+      "emotion_tags": [
+        "confusion",
+        "introspection",
+        "reassurance"
+      ],
+      "sentiment_timeline": [
+        {
+          "segment_label": "intro",
+          "start_second": null,
+          "end_second": null,
+          "sentiment": "neutral",
+          "notes": "Initial question about life getting easier."
+        },
+        {
+          "segment_label": "reflection",
+          "start_second": null,
+          "end_second": null,
+          "sentiment": "neutral",
+          "notes": "Discussion about self-awareness and personal growth."
+        },
+        {
+          "segment_label": "self-doubt",
+          "start_second": null,
+          "end_second": null,
+          "sentiment": "negative",
+          "notes": "Expression of uncertainty about personal identity and career."
+        },
+        {
+          "segment_label": "encouragement",
+          "start_second": null,
+          "end_second": null,
+          "sentiment": "positive",
+          "notes": "Reassurance and encouragement about figuring things out."
+        }
+      ],
+      "notes": "The call reflects a journey from questioning and self-doubt to reassurance and encouragement. The customer expresses confusion about their identity and career but receives positive reinforcement."
+    },
+    "intent_and_topics": {
+      "primary_intent": null,
+      "secondary_intents": [],
+      "topics": [],
+      "key_phrases": [
+        "Does it get easier?",
+        "The more you know who you are",
+        "I just don't know what I'm supposed to be",
+        "I tried being a writer",
+        "I tried taking pictures",
+        "Every girl goes through a photography phase"
+      ],
+      "intent_confidence": null,
+      "notes": "The conversation is more philosophical and introspective rather than a typical customer support call. There is no clear intent related to customer service."
+    },
+    "call_quality": {
+      "overall_quality_score": 65,
+      "scores": {
+        "greeting": 70,
+        "listening_and_empathy": 75,
+        "clarity_of_explanations": 60,
+        "professionalism": 65,
+        "script_adherence": null
+      },
+      "strengths": [
+        "The agent demonstrated good listening skills by acknowledging the customer's feelings.",
+        "The agent provided reassurance and encouragement to the customer."
+      ],
+      "improvements": [
+        "The agent should work on providing clearer explanations to the customer's concerns.",
+        "The agent could improve by adhering more closely to the script to ensure all necessary information is covered."
+      ],
+      "notes": "The agent was empathetic and supportive, but could improve in providing clearer guidance and following the script more closely."
+    },
+    "compliance_and_risk": {
+      "required_phrases_present": [],
+      "missing_required_phrases": [],
+      "forbidden_phrases_detected": [],
+      "pii_detected": [],
+      "risk_level": "low",
+      "notes": "The call transcript does not contain any required or forbidden phrases, and no PII was detected. Therefore, the risk level is assessed as low."
+    },
+    "outcome_and_followup": {
+      "resolution_status": "unresolved",
+      "final_outcome": "no_clear_outcome",
+      "followup_actions": [],
+      "escalation_required": false,
+      "escalation_reason": null,
+      "notes": "The call did not address any specific customer issue or request. No clear outcome or next steps were identified."
+    }
+  }
+}

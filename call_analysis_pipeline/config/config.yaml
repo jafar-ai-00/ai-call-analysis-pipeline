@@ -1,0 +1,11 @@
+client_id: "client_123"
+
+recordings_dir: "recordings/"
+data_dir: "data/"
+reports_dir: "reports/"
+chroma_dir: "chroma_db/"
+
+openai:
+  api_key_env: "OPENAI_API_KEY"
+  whisper_model: "whisper-1"
+  llm_model: "gpt-4o"

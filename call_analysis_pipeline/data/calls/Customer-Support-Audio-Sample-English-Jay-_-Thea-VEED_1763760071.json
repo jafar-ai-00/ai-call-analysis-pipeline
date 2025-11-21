@@ -1,0 +1,229 @@
+{
+  "metadata": {
+    "call_id": "Customer-Support-Audio-Sample-English-Jay-_-Thea-VEED_1763760071",
+    "client_id": "client_123",
+    "audio_file": "recordings/Customer-Support-Audio-Sample-English-Jay-_-Thea-VEED.mp3",
+    "call_start_time": null,
+    "call_end_time": null,
+    "duration_seconds": null,
+    "agent_name": null,
+    "customer_phone": null,
+    "extra_metadata": {
+      "size_bytes": 4062868,
+      "modified_time": 1763760071.4621983,
+      "created_at": "2025-11-21T21:44:29.888326"
+    }
+  },
+  "transcript": "Hello, thank you for contacting. This is Andrea. How may I assist you today? Hi, I ordered a product over a week ago and it hasn't arrived yet. The delivery date has passed and I'd like to know what's going on. I'm really sorry to hear your order hasn't arrived yet. Let me look into it right away and get this sorted for you. Could you please provide me with your order number? Sure, it's... Thank you for providing that. I'm going to check on the status of your order now. Just a moment, please. I can see that your order was scheduled for delivery by... But it looks like there was an expected delay. I truly apologize for the inconvenience. Would you prefer to proceed with the refund or would you like me to expedite the shipment to ensure it reaches you as soon as possible? I'd still like the product, but I'd appreciate it if you could make sure this doesn't happen again. I completely understand and I truly apologize for the delay. I placed an expedited request for your order and I'll send you a tracking number so you can monitor the delivery. Additionally, thank you for your understanding. I'd like to offer you a 40% discount on your next order. That sounds good. I'll accept the discount. I just hope the order gets here soon. Absolutely. I've taken care of the expedited shipping and you'll receive the updated tracking information via email shortly. I truly appreciate your patience and I'm confident this will be resolved quickly. Thank you for your help. You're very welcome. If you have any further questions or concerns, feel free to reach out. We're here to help and have a great day ahead.",
+  "sentiment": {
+    "overall": "positive",
+    "score": 0.7,
+    "emotion_tags": [
+      "frustration",
+      "relief",
+      "satisfaction"
+    ],
+    "sentiment_timeline": [
+      {
+        "segment_label": "intro",
+        "start_second": null,
+        "end_second": null,
+        "sentiment": "neutral",
+        "notes": "Customer initiates the call with a delivery issue."
+      },
+      {
+        "segment_label": "problem_explained",
+        "start_second": null,
+        "end_second": null,
+        "sentiment": "negative",
+        "notes": "Customer expresses frustration about the delayed order."
+      },
+      {
+        "segment_label": "resolution_offered",
+        "start_second": null,
+        "end_second": null,
+        "sentiment": "positive",
+        "notes": "Agent offers solutions and a discount, leading to customer satisfaction."
+      },
+      {
+        "segment_label": "conclusion",
+        "start_second": null,
+        "end_second": null,
+        "sentiment": "positive",
+        "notes": "Customer accepts the resolution and expresses hope for a quick delivery."
+      }
+    ],
+    "notes": "The call began with the customer expressing frustration over a delayed order. The agent provided a solution and a discount, which relieved the customer and led to a positive resolution."
+  },
+  "intent_and_topics": {
+    "primary_intent": "complaint",
+    "secondary_intents": [
+      "refund_request",
+      "order_status_inquiry"
+    ],
+    "topics": [
+      "delivery_issue",
+      "customer_service",
+      "order_tracking"
+    ],
+    "key_phrases": [
+      "ordered a product over a week ago",
+      "delivery date has passed",
+      "expected delay",
+      "expedite the shipment",
+      "40% discount on your next order"
+    ],
+    "intent_confidence": 0.9,
+    "notes": "The primary intent is a complaint about a delayed order. The customer also inquired about the order status and considered a refund, indicating secondary intents."
+  },
+  "call_quality": {
+    "overall_quality_score": 85,
+    "scores": {
+      "greeting": 80,
+      "listening_and_empathy": 90,
+      "clarity_of_explanations": 85,
+      "professionalism": 90,
+      "script_adherence": 80
+    },
+    "strengths": [
+      "The agent demonstrated excellent empathy by acknowledging the customer's frustration and apologizing for the delay.",
+      "Clear and concise explanations were provided regarding the order status and available options.",
+      "The agent maintained a professional tone throughout the call.",
+      "Proactively offered a discount to enhance customer satisfaction."
+    ],
+    "improvements": [
+      "Ensure the initial greeting includes the company name for better brand representation.",
+      "Provide more specific information about the cause of the delay if available."
+    ],
+    "notes": "The agent handled the call with professionalism and empathy, effectively addressing the customer's concerns and offering a satisfactory resolution."
+  },
+  "compliance_and_risk": {
+    "required_phrases_present": [],
+    "missing_required_phrases": [],
+    "forbidden_phrases_detected": [],
+    "pii_detected": [],
+    "risk_level": "low",
+    "notes": "The call did not contain any required or forbidden phrases, and no PII was detected. Therefore, the risk level is assessed as low."
+  },
+  "outcome_and_followup": {
+    "resolution_status": "partially_resolved",
+    "final_outcome": "expedited_shipping_requested",
+    "followup_actions": [
+      {
+        "description": "Send tracking number via email",
+        "owner": "agent",
+        "due_date": null
+      }
+    ],
+    "escalation_required": false,
+    "escalation_reason": null,
+    "notes": "The customer's order was delayed, and an expedited shipping request was placed. A tracking number will be sent via email. A 40% discount on the next order was offered and accepted."
+  },
+  "custom_metrics": null,
+  "raw_llm_outputs": {
+    "sentiment": {
+      "overall": "positive",
+      "score": 0.7,
+      "emotion_tags": [
+        "frustration",
+        "relief",
+        "satisfaction"
+      ],
+      "sentiment_timeline": [
+        {
+          "segment_label": "intro",
+          "start_second": null,
+          "end_second": null,
+          "sentiment": "neutral",
+          "notes": "Customer initiates the call with a delivery issue."
+        },
+        {
+          "segment_label": "problem_explained",
+          "start_second": null,
+          "end_second": null,
+          "sentiment": "negative",
+          "notes": "Customer expresses frustration about the delayed order."
+        },
+        {
+          "segment_label": "resolution_offered",
+          "start_second": null,
+          "end_second": null,
+          "sentiment": "positive",
+          "notes": "Agent offers solutions and a discount, leading to customer satisfaction."
+        },
+        {
+          "segment_label": "conclusion",
+          "start_second": null,
+          "end_second": null,
+          "sentiment": "positive",
+          "notes": "Customer accepts the resolution and expresses hope for a quick delivery."
+        }
+      ],
+      "notes": "The call began with the customer expressing frustration over a delayed order. The agent provided a solution and a discount, which relieved the customer and led to a positive resolution."
+    },
+    "intent_and_topics": {
+      "primary_intent": "complaint",
+      "secondary_intents": [
+        "refund_request",
+        "order_status_inquiry"
+      ],
+      "topics": [
+        "delivery_issue",
+        "customer_service",
+        "order_tracking"
+      ],
+      "key_phrases": [
+        "ordered a product over a week ago",
+        "delivery date has passed",
+        "expected delay",
+        "expedite the shipment",
+        "40% discount on your next order"
+      ],
+      "intent_confidence": 0.9,
+      "notes": "The primary intent is a complaint about a delayed order. The customer also inquired about the order status and considered a refund, indicating secondary intents."
+    },
+    "call_quality": {
+      "overall_quality_score": 85,
+      "scores": {
+        "greeting": 80,
+        "listening_and_empathy": 90,
+        "clarity_of_explanations": 85,
+        "professionalism": 90,
+        "script_adherence": 80
+      },
+      "strengths": [
+        "The agent demonstrated excellent empathy by acknowledging the customer's frustration and apologizing for the delay.",
+        "Clear and concise explanations were provided regarding the order status and available options.",
+        "The agent maintained a professional tone throughout the call.",
+        "Proactively offered a discount to enhance customer satisfaction."
+      ],
+      "improvements": [
+        "Ensure the initial greeting includes the company name for better brand representation.",
+        "Provide more specific information about the cause of the delay if available."
+      ],
+      "notes": "The agent handled the call with professionalism and empathy, effectively addressing the customer's concerns and offering a satisfactory resolution."
+    },
+    "compliance_and_risk": {
+      "required_phrases_present": [],
+      "missing_required_phrases": [],
+      "forbidden_phrases_detected": [],
+      "pii_detected": [],
+      "risk_level": "low",
+      "notes": "The call did not contain any required or forbidden phrases, and no PII was detected. Therefore, the risk level is assessed as low."
+    },
+    "outcome_and_followup": {
+      "resolution_status": "partially_resolved",
+      "final_outcome": "expedited_shipping_requested",
+      "followup_actions": [
+        {
+          "description": "Send tracking number via email",
+          "owner": "agent",
+          "due_date": null
+        }
+      ],
+      "escalation_required": false,
+      "escalation_reason": null,
+      "notes": "The customer's order was delayed, and an expedited shipping request was placed. A tracking number will be sent via email. A 40% discount on the next order was offered and accepted."
+    }
+  }
+}

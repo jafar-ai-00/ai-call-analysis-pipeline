@@ -1,0 +1,261 @@
+{
+  "metadata": {
+    "call_id": "Inbound-Sales-Audio-Sample-Josh_Mary-VEED_1763760119",
+    "client_id": "client_123",
+    "audio_file": "recordings/Inbound-Sales-Audio-Sample-Josh_Mary-VEED.mp3",
+    "call_start_time": null,
+    "call_end_time": null,
+    "duration_seconds": null,
+    "agent_name": null,
+    "customer_phone": null,
+    "extra_metadata": {
+      "size_bytes": 9788308,
+      "modified_time": 1763760119.071488,
+      "created_at": "2025-11-21T21:44:29.888589"
+    }
+  },
+  "transcript": "Hello, thank you for calling. This is Jenny. How can I assist you today? Hi, I've been looking into your marketing services and I'm interested to learn more about how you can help my business grow. I run an e-commerce store and want to increase my online sales, but I'm not really sure where to start. That's great. I'd love to learn more about your business and goals so we can see how our marketing strategies could help. Can you tell me a bit more about your e-commerce store and what specific areas you're looking to improve? Yeah, sure. So I sell Nutribullets online. We've been doing okay, but I feel like we're not getting enough traffic. And when we do, it's not converting into sales as much as I'd like. Thank you for sharing that. It sounds like you're looking to drive more targeted traffic and improve your conversion rate. Those are two areas we specialize in. We can help through services like SEO, paid advertising and conversion rate optimization. Do you currently use any digital marketing strategies or are you looking to explore new ones? Yep. So we've done a bit of Facebook advertising and some SEO, but it hasn't really worked as well as we'd hoped. I'm open to new approaches though. I understand. Actually, many businesses face similar challenges with getting the right balance. What we can do is take a deep dive into your current strategies and figure out what's working and where there's room for improvement. We actually offer a tailored solution based on your unique goals, whether it's improving ad performance, enhancing SEO or creating a more user-friendly website experience to boost conversions. We also offer a complimentary initial consultation where we analyze your current marketing efforts and provide recommendations. How does that sound to you? That sounds good. I'd like to understand what areas need improvement and how much or I guess like how you can help us specifically. Great. We will start with an audit of your website and current marketing efforts. From there, we will recommend strategies to increase your visibility and turn visitors into customers. This can include optimizing your SEO, refining your ad targeting and improve your site's user experience to guide people smoothly through the sales funnel. Now, what's your biggest priority? Is it driving more traffic, increasing conversion rates or perhaps both? Both, really. We need more people on the site, but we also really need them once they actually get there to buy something. Yeah, understood. Based on what you've shared, it sounds like we can build a comprehensive strategy that focuses on driving quality traffic through targeted ads and SEO, while also improving your site's design and content to encourage purchases. Our team has actually helped many businesses like yours and would love to do the same for you. Would you like to schedule a consultation with one of our marketing strategies to go over this in detail? Yeah, I'd love that. Fantastic. I'll set up the consultation and send you a calendar invite. We'll also ask a few more details about your business before the meeting so we can tailor our discussion to your needs. Is there a particular time or day that works best for you? I'm available tomorrow at 11. Perfect. I'll get that scheduled right away. Thank you again for reaching out to us. We're actually excited to help you grow your business and I look forward to our conversation. Thank you so much. I'm looking forward to it too. You're very welcome. If you need anything else before the meeting, feel free to contact us. Have a great day.",
+  "sentiment": {
+    "overall": "positive",
+    "score": 0.8,
+    "emotion_tags": [
+      "interest",
+      "curiosity",
+      "optimism",
+      "satisfaction"
+    ],
+    "sentiment_timeline": [
+      {
+        "segment_label": "introduction",
+        "start_second": null,
+        "end_second": null,
+        "sentiment": "neutral",
+        "notes": "Customer inquires about marketing services."
+      },
+      {
+        "segment_label": "discussion_of_needs",
+        "start_second": null,
+        "end_second": null,
+        "sentiment": "positive",
+        "notes": "Customer expresses interest in improving traffic and conversion."
+      },
+      {
+        "segment_label": "service_explanation",
+        "start_second": null,
+        "end_second": null,
+        "sentiment": "positive",
+        "notes": "Agent explains services and offers a consultation."
+      },
+      {
+        "segment_label": "agreement_to_consultation",
+        "start_second": null,
+        "end_second": null,
+        "sentiment": "positive",
+        "notes": "Customer agrees to schedule a consultation."
+      },
+      {
+        "segment_label": "closing",
+        "start_second": null,
+        "end_second": null,
+        "sentiment": "positive",
+        "notes": "Customer and agent express anticipation for future collaboration."
+      }
+    ],
+    "notes": "The customer expressed interest and optimism about improving their business with the company's services. The conversation was positive, with the customer agreeing to a consultation to explore tailored marketing strategies."
+  },
+  "intent_and_topics": {
+    "primary_intent": "book_appointment",
+    "secondary_intents": [
+      "general_inquiry"
+    ],
+    "topics": [
+      "marketing_services",
+      "e-commerce",
+      "traffic_increase",
+      "conversion_optimization"
+    ],
+    "key_phrases": [
+      "interested to learn more about marketing services",
+      "increase my online sales",
+      "drive more targeted traffic",
+      "improve conversion rate",
+      "SEO and paid advertising",
+      "complimentary initial consultation",
+      "schedule a consultation",
+      "available tomorrow at 11"
+    ],
+    "intent_confidence": 0.9,
+    "notes": null
+  },
+  "call_quality": {
+    "overall_quality_score": 85,
+    "scores": {
+      "greeting": 90,
+      "listening_and_empathy": 85,
+      "clarity_of_explanations": 80,
+      "professionalism": 90,
+      "script_adherence": 80
+    },
+    "strengths": [
+      "The agent provided a warm and professional greeting.",
+      "Demonstrated strong listening skills by summarizing the customer's needs accurately.",
+      "Offered clear and relevant solutions tailored to the customer's business goals.",
+      "Maintained a professional tone throughout the call."
+    ],
+    "improvements": [
+      "Could provide more specific examples of past successes with similar clients.",
+      "Might benefit from asking more probing questions to uncover additional customer needs."
+    ],
+    "notes": "The agent effectively engaged with the customer, offering tailored solutions and maintaining professionalism. There is room for improvement in exploring deeper customer insights."
+  },
+  "compliance_and_risk": {
+    "required_phrases_present": [],
+    "missing_required_phrases": [],
+    "forbidden_phrases_detected": [],
+    "pii_detected": [],
+    "risk_level": "low",
+    "notes": "The call did not contain any required or forbidden phrases, and no PII was detected. There are no compliance issues, resulting in a low risk level."
+  },
+  "outcome_and_followup": {
+    "resolution_status": "resolved",
+    "final_outcome": "appointment_booked",
+    "followup_actions": [
+      {
+        "description": "Send calendar invite for consultation",
+        "owner": "agent",
+        "due_date": "2025-11-22"
+      },
+      {
+        "description": "Gather additional business details for tailored discussion",
+        "owner": "agent",
+        "due_date": null
+      }
+    ],
+    "escalation_required": false,
+    "escalation_reason": null,
+    "notes": "The customer expressed interest in marketing services to improve traffic and conversion rates for their e-commerce store. A consultation was scheduled for tomorrow at 11 AM to discuss tailored strategies."
+  },
+  "custom_metrics": null,
+  "raw_llm_outputs": {
+    "sentiment": {
+      "overall": "positive",
+      "score": 0.8,
+      "emotion_tags": [
+        "interest",
+        "curiosity",
+        "optimism",
+        "satisfaction"
+      ],
+      "sentiment_timeline": [
+        {
+          "segment_label": "introduction",
+          "start_second": null,
+          "end_second": null,
+          "sentiment": "neutral",
+          "notes": "Customer inquires about marketing services."
+        },
+        {
+          "segment_label": "discussion_of_needs",
+          "start_second": null,
+          "end_second": null,
+          "sentiment": "positive",
+          "notes": "Customer expresses interest in improving traffic and conversion."
+        },
+        {
+          "segment_label": "service_explanation",
+          "start_second": null,
+          "end_second": null,
+          "sentiment": "positive",
+          "notes": "Agent explains services and offers a consultation."
+        },
+        {
+          "segment_label": "agreement_to_consultation",
+          "start_second": null,
+          "end_second": null,
+          "sentiment": "positive",
+          "notes": "Customer agrees to schedule a consultation."
+        },
+        {
+          "segment_label": "closing",
+          "start_second": null,
+          "end_second": null,
+          "sentiment": "positive",
+          "notes": "Customer and agent express anticipation for future collaboration."
+        }
+      ],
+      "notes": "The customer expressed interest and optimism about improving their business with the company's services. The conversation was positive, with the customer agreeing to a consultation to explore tailored marketing strategies."
+    },
+    "intent_and_topics": {
+      "primary_intent": "book_appointment",
+      "secondary_intents": [
+        "general_inquiry"
+      ],
+      "topics": [
+        "marketing_services",
+        "e-commerce",
+        "traffic_increase",
+        "conversion_optimization"
+      ],
+      "key_phrases": [
+        "interested to learn more about marketing services",
+        "increase my online sales",
+        "drive more targeted traffic",
+        "improve conversion rate",
+        "SEO and paid advertising",
+        "complimentary initial consultation",
+        "schedule a consultation",
+        "available tomorrow at 11"
+      ],
+      "intent_confidence": 0.9,
+      "notes": null
+    },
+    "call_quality": {
+      "overall_quality_score": 85,
+      "scores": {
+        "greeting": 90,
+        "listening_and_empathy": 85,
+        "clarity_of_explanations": 80,
+        "professionalism": 90,
+        "script_adherence": 80
+      },
+      "strengths": [
+        "The agent provided a warm and professional greeting.",
+        "Demonstrated strong listening skills by summarizing the customer's needs accurately.",
+        "Offered clear and relevant solutions tailored to the customer's business goals.",
+        "Maintained a professional tone throughout the call."
+      ],
+      "improvements": [
+        "Could provide more specific examples of past successes with similar clients.",
+        "Might benefit from asking more probing questions to uncover additional customer needs."
+      ],
+      "notes": "The agent effectively engaged with the customer, offering tailored solutions and maintaining professionalism. There is room for improvement in exploring deeper customer insights."
+    },
+    "compliance_and_risk": {
+      "required_phrases_present": [],
+      "missing_required_phrases": [],
+      "forbidden_phrases_detected": [],
+      "pii_detected": [],
+      "risk_level": "low",
+      "notes": "The call did not contain any required or forbidden phrases, and no PII was detected. There are no compliance issues, resulting in a low risk level."
+    },
+    "outcome_and_followup": {
+      "resolution_status": "resolved",
+      "final_outcome": "appointment_booked",
+      "followup_actions": [
+        {
+          "description": "Send calendar invite for consultation",
+          "owner": "agent",
+          "due_date": "2025-11-22"
+        },
+        {
+          "description": "Gather additional business details for tailored discussion",
+          "owner": "agent",
+          "due_date": null
+        }
+      ],
+      "escalation_required": false,
+      "escalation_reason": null,
+      "notes": "The customer expressed interest in marketing services to improve traffic and conversion rates for their e-commerce store. A consultation was scheduled for tomorrow at 11 AM to discuss tailored strategies."
+    }
+  }
+}
