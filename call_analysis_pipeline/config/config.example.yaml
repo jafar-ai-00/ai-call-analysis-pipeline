@@ -8,6 +8,8 @@ openai:
   api_key_env: "OPENAI_API_KEY"
   whisper_model: "whisper-1"
   llm_model: "gpt-4o"
+  embedding_model: "text-embedding-3-small"
+
 
 compliance:
   required_phrases:
