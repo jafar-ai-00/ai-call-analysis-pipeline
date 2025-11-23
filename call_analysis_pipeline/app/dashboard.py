@@ -16,6 +16,8 @@ from app.schemas import (
     SentimentLabel,
     RiskLevel,
 )
+from app.vectorstore import semantic_search_calls
+
 
 
 DATA_DIR = Path("data")
@@ -209,6 +211,76 @@ def render_call_card(call: CallAnalysis) -> None:
         with st.expander("View outcome & follow-up"):
             st.json(call.outcome_and_followup.model_dump(mode='json') if call.outcome_and_followup else {})
 
+def render_semantic_search_section() -> None:
+    st.markdown("## 🔍 Semantic Search across calls")
+
+    with st.expander("Open semantic search"):
+        query = st.text_input(
+            "Enter a search query (semantic)",
+            value="",
+            key="semantic_query",
+            placeholder="e.g. angry customer asking about refund",
+        )
+        n_results = st.slider(
+            "Number of results",
+            min_value=1,
+            max_value=10,
+            value=5,
+            step=1,
+            key="semantic_n_results",
+        )
+
+        run_search = st.button("Search", key="semantic_search_btn")
+
+        if run_search:
+            if not query.strip():
+                st.warning("Please enter a query before searching.")
+                return
+
+            with st.spinner("Running semantic search..."):
+                try:
+                    matches = semantic_search_calls(
+                        query=query,
+                        n_results=n_results,
+                        chroma_db_dir="chroma_db",
+                        collection_name="calls",
+                    )
+                except Exception as e:
+                    st.error(f"Error running semantic search: {e}")
+                    return
+
+            if not matches:
+                st.info("No matches found.")
+                return
+
+            st.markdown(f"### Top {len(matches)} result(s)")
+            for i, m in enumerate(matches, start=1):
+                meta = m.get("metadata") or {}
+                call_id = meta.get("call_id")
+                client_id = meta.get("client_id")
+                sentiment = meta.get("sentiment") or "unknown"
+                risk_level = meta.get("risk_level") or "unknown"
+                quality_score = meta.get("quality_score")
+
+                doc = m.get("document") or ""
+                snippet = doc[:220].replace("\n", " ")
+                if len(doc) > 220:
+                    snippet += "..."
+
+                distance = m.get("distance")
+
+                with st.expander(
+                    f"Result {i}: call={call_id} | sentiment={sentiment} | risk={risk_level}"
+                ):
+                    st.markdown(f"**Client ID:** `{client_id}`")
+                    st.markdown(f"**Quality score:** `{quality_score}`")
+                    st.markdown(f"**Distance:** `{distance}`")
+
+                    st.markdown("**Matching text snippet:**")
+                    st.write(snippet)
+
+                    st.markdown("**Raw metadata:**")
+                    st.json(meta)
 
 # =========================
 # Main app
@@ -285,6 +357,8 @@ def main():
 
     # Main layout
     render_summary_section(stats)
+
+    render_semantic_search_section()
 
     st.markdown("## Calls")
     st.caption(f"Showing {len(filtered_calls)} of {len(calls)} calls after filters.")
