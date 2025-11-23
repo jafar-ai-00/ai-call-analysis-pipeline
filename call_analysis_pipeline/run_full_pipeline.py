@@ -14,6 +14,7 @@ from app.analysis_runner import (
     run_compliance_for_all_calls,
     run_outcome_for_all_calls,
 )
+from app.vectorstore import build_calls_index
 
 CONFIG_PATH = Path("config/config.yaml")
 
@@ -108,6 +109,12 @@ def main():
     print("All calls in data/calls/ now have full analysis attached.")
     print("Open the dashboard with:")
     print("   uv run streamlit run app/dashboard.py")
+
+    print("Chroma index updated ✅")
+    print("\n[5.1] Updating Chroma index over calls...")
+    chroma_db_dir = config.get("chroma_db_dir", "chroma_db/")
+    build_calls_index(data_dir=data_dir, chroma_db_dir=chroma_db_dir, collection_name="calls")
+    print("Chroma index updated ✅")
 
 
 if __name__ == "__main__":
