@@ -361,7 +361,7 @@ Implemented end-to-end:
 
 ### Overall dashboard
 
-![Call Analysis Dashboard](call_analysis_pipeline/docs/dashboard.png)
+![Call Analysis Dashboard](call_analysis_pipeline/docs/Dashboard.png)
 
 ### Semantic search across calls
 
