@@ -1,8 +1,28 @@
 # 📞 AI Call Analysis Pipeline
 
-AI-powered pipeline that ingests daily call recordings for a **single client**, runs multi-step LLM analysis on each call, and exposes the results in a **Streamlit dashboard**.
+AI-powered pipeline that ingests call recordings for a **single client**, runs multi-step LLM analysis on each call, indexes transcripts into a vector database, and exposes everything in a **Streamlit dashboard + semantic search**.
 
-The pipeline currently works on `.wav` and `.mp3` files that you drop into a folder and is built in small, composable steps so you can easily extend it.
+The pipeline currently works on `.wav` and `.mp3` files that you drop into a folder and is built in small, composable steps so it’s easy to extend.
+
+---
+
+## 🚀 What this project does
+
+For each call, the system:
+
+1. Discovers audio files in `recordings/` (`.wav` and `.mp3`).
+2. Transcribes them with **OpenAI Whisper**.
+3. Builds a rich `CallAnalysis` object (Pydantic) and saves it as JSON under `data/calls/`.
+4. Runs multiple **LLM analysis passes** (via GPT-4o + LangChain):
+   - Sentiment & emotion
+   - Intent & topics
+   - Call quality & agent performance
+   - Compliance & risk
+   - Outcome & follow-up
+5. Indexes all transcripts into **ChromaDB** using **OpenAI embeddings**.
+6. Lets you:
+   - Explore calls and metrics in a **Streamlit dashboard**
+   - Run **semantic search across calls** (CLI + UI)
 
 ---
 
@@ -68,15 +88,66 @@ All data is stored as JSON under `data/calls/`, one file per call.
 
 ---
 
+## 🧠 Semantic search (ChromaDB + OpenAI)
+
+The project includes a vector store layer for **semantic search across calls**:
+
+- Uses **ChromaDB** as the persistent vector database (`chroma_db/`).
+- Uses **OpenAI embeddings** (`text-embedding-3-small` by default) via Chroma’s `OpenAIEmbeddingFunction`.
+- One document per call (full transcript), with metadata:
+  - `call_id`, `client_id`, `audio_file`
+  - `sentiment`, `primary_intent`, `risk_level`, `quality_score`
+
+### Build the index
+
+```bash
+uv run python run_build_index.py
+````
+
+This:
+
+* Loads all `data/calls/*.json`
+* Extracts transcripts + metadata
+* Upserts them into the `calls` collection in ChromaDB
+
+### CLI search
+
+```bash
+uv run python run_search_cli.py "angry customer asking about refund"
+```
+
+This prints the top matching calls, including:
+
+* `call_id`, `client_id`
+* `sentiment`, `primary_intent`, `risk_level`, `quality_score`
+* A text snippet of the matching part of the transcript
+* Distance score
+
+### Streamlit semantic search
+
+The dashboard includes a **“🔍 Semantic Search across calls”** section:
+
+* Enter a natural language query.
+* View top-N matching calls with metadata and transcript snippets.
+* Great for quickly finding:
+
+  * Frustrated customers about billing
+  * Calls about cancellations
+  * Upsell opportunities
+  * High-risk or high-impact conversations
+
+---
+
 ## 🧱 Tech Stack
 
-- **Language:** Python
-- **Package manager:** `uv`
-- **LLM & ASR:** OpenAI (Whisper, GPT-4o)
-- **Orchestration / prompting:** LangChain (`langchain-openai`)
-- **Web UI:** Streamlit
-- **Config:** YAML + environment variables
-- **Data modeling:** Pydantic v2 models
+* **Language:** Python
+* **Package manager:** `uv`
+* **LLM & ASR:** OpenAI (Whisper, GPT-4o)
+* **Orchestration / prompting:** LangChain (`langchain-openai`)
+* **Vector DB:** ChromaDB (`chromadb` + `OpenAIEmbeddingFunction`)
+* **Web UI:** Streamlit
+* **Config:** YAML + environment variables
+* **Data modeling:** Pydantic v2 models
 
 ---
 
@@ -86,7 +157,7 @@ All data is stored as JSON under `data/calls/`, one file per call.
 call_analysis_pipeline/
 ├── app/
 │   ├── __init__.py
-│   ├── ingestion.py            # Discover audio recordings
+│   ├── ingestion.py            # Discover audio recordings (.wav / .mp3)
 │   ├── transcription.py        # Whisper transcription (OpenAI)
 │   ├── storage.py              # Save CallAnalysis JSON files
 │   ├── schemas.py              # Pydantic models (CallMetadata, CallAnalysis, etc.)
@@ -96,17 +167,22 @@ call_analysis_pipeline/
 │   ├── analysis_compliance.py
 │   ├── analysis_outcome.py
 │   ├── analysis_runner.py      # Helpers to run analyses over all calls
-│   └── dashboard.py            # Streamlit dashboard
+│   ├── vectorstore.py          # ChromaDB + OpenAI embeddings (index + search)
+│   └── dashboard.py            # Streamlit dashboard (summary + filters + semantic search)
 ├── config/
 │   └── config.example.yaml     # Example config (copy to config.yaml locally)
 ├── recordings/                 # Input .wav/.mp3 recordings (ignored in git)
 ├── data/
 │   └── calls/                  # Per-call JSON outputs (ignored in git)
-├── run_full_pipeline.py        # End-to-end pipeline runner
+├── chroma_db/                  # ChromaDB storage (ignored in git)
+├── run_full_pipeline.py        # End-to-end pipeline runner (audio → analysis → index)
+├── run_build_index.py          # Build/update Chroma index over calls
+├── run_search_cli.py           # Simple CLI semantic search tool
 ├── main.py                     # Ingest + transcribe + save CallAnalysis
 ├── pyproject.toml              # uv / project configuration
-└── .gitignore
-````
+├── .gitignore
+└── README.md
+```
 
 ---
 
@@ -141,11 +217,31 @@ Create your config file:
 cp config/config.example.yaml config/config.yaml
 ```
 
-Adjust values inside `config/config.yaml` as needed.
+Adjust values inside `config/config.yaml` as needed:
+
+```yaml
+client_id: "client_123"
+
+recordings_dir: "recordings/"
+data_dir: "data/"
+chroma_db_dir: "chroma_db/"
+
+openai:
+  api_key_env: "OPENAI_API_KEY"
+  whisper_model: "whisper-1"
+  llm_model: "gpt-4o"
+  embedding_model: "text-embedding-3-small"
+
+compliance:
+  required_phrases:
+    - "This call may be recorded for quality and training purposes."
+  forbidden_phrases:
+    - "I guarantee you will never have any problems."
+```
 
 ---
 
-## 🔁 Pipeline: From audio to analyzed calls
+## 🔁 Pipeline: From audio to analyzed + indexed calls
 
 ### 0. Drop audio recordings
 
@@ -179,8 +275,13 @@ This will:
    * Call quality
    * Compliance & risk
    * Outcome & follow-up
+5. Optionally (if wired in) update the Chroma index over all calls.
 
-The analysis runner functions are idempotent: if a call already has a given section (e.g. sentiment), it will be skipped.
+Alternatively, you can explicitly rebuild the index with:
+
+```bash
+uv run python run_build_index.py
+```
 
 ---
 
@@ -230,6 +331,12 @@ Open the URL shown (typically `http://localhost:8501`).
     * Compliance & risk details
     * Outcome & follow-up
 
+* **🔍 Semantic Search across calls**
+
+  * Type a natural language query.
+  * View top-N semantically similar calls from the Chroma index.
+  * See matching snippets + metadata (sentiment, risk, quality, etc.).
+
 ---
 
 ## ✅ Current Status
@@ -245,16 +352,22 @@ Implemented end-to-end:
 * [x] Compliance & risk checks
 * [x] Outcome & follow-up analysis
 * [x] JSON storage per call under `data/calls/`
-* [x] Streamlit dashboard to explore analyzed calls
+* [x] ChromaDB index over transcripts (OpenAI embeddings)
+* [x] CLI semantic search (`run_search_cli.py`)
+* [x] Streamlit dashboard with semantic search section
 * [x] Single `run_full_pipeline.py` to chain all stages
 
----
+## 📸 Screenshots
 
-## 🛠️ Possible Next Steps
+### Overall dashboard
 
-* Per-day **aggregated reports** under `reports/` (JSON/Markdown/PDF).
-* Multi-client support (separate client IDs + filter in dashboard).
-* Charts and visualizations for trends over time.
-* Vector search over transcripts (ChromaDB) for semantic search across calls.
+![Call Analysis Dashboard](docs/dashboard.png)
 
-```
+### Semantic search across calls
+
+![Semantic Search](docs/semantic-search.png)
+
+### Calls
+
+![Calls](docs/Calls.png)
+
